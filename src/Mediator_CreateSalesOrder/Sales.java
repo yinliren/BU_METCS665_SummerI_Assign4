@@ -5,10 +5,7 @@
  */
 package Mediator_CreateSalesOrder;
 
-/**
- *
- * @author Liren
- */
+
 public abstract class Sales {
     protected SalesOrderMediator mediator;
 	public String name;

@@ -6,6 +6,5 @@
 package IteratorANDInterpreter_EmployeeManage;
 
 public abstract class Expression {
-    public abstract double top(String keywords);
-    public abstract double average(String keywords);
+    public abstract double evaluate(QuestionContext keywords);
 }

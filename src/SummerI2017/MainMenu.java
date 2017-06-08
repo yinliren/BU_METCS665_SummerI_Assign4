@@ -3,9 +3,11 @@ package SummerI2017;
 import AbstractPartFactory.FactoryProducer;
 import AbstractPartFactory.Part;
 import AbstractPartFactory.PartFactory;
+import IteratorANDInterpreter_EmployeeManage.AVG;
 import IteratorANDInterpreter_EmployeeManage.Iterator;
 import IteratorANDInterpreter_EmployeeManage.NameRepository;
 import IteratorANDInterpreter_EmployeeManage.QuestionContext;
+import IteratorANDInterpreter_EmployeeManage.TOP;
 import Mediator_CreateSalesOrder.SalesOrderMediator;
 import Mediator_CreateSalesOrder.SalesOrderMediatorImpl;
 import Mediator_CreateSalesOrder.SalesImpl;
@@ -51,7 +53,21 @@ public class MainMenu {
                     System.out.println(nameList[index] + ": " + numberofOrder);
                     index++;  
                 }
-             
+             System.out.println("Please Enter request data process:");
+             Scanner scanner = new Scanner( System.in );
+             String input = scanner.nextLine();
+             QuestionContext optionContext = new QuestionContext(input);
+             AVG avg = new AVG();
+             TOP top = new TOP();
+             if(input == "avg" && input == "AVG" && input == "Average" && input == "average" ){
+                 System.out.println("The average number of sales orders is: " + avg.evaluate(optionContext));
+             }
+             else if(input == "top" || input == "TOP" || input == "Top"){
+                 System.out.println("The largest number of sales orders is: " + top.evaluate(optionContext));
+             }
+             else{
+                 System.out.println("This request is under construction.");
+             }
                     
         }
         else if(ManagerOption == 2) {
@@ -65,7 +81,7 @@ public class MainMenu {
             PartFactory ManningPartFactory = FactoryProducer.getPartFactory("Manning");
             Part resistor = ManningPartFactory.createPart("Resistor");
             resistor.properties();
-        
+            
         
         }
         else if(ManagerOption == 3) {System.out.println("Function under construction, please re-enter option.");}

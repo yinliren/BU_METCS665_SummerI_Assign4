@@ -9,17 +9,13 @@ public class QuestionContext {
     private String Ques = "";
     private double result;
     
-    String[] partsOfQues;
+    //String[] partsOfQues;
 
     public QuestionContext(String input)
     {
       this.Ques = input;
-      
-      partsOfQues = getInput().split(" ");
-   
+      //partsOfQues = getInput().split(" ");
     }
     public String getInput() { return Ques; }
     public double getResult() { return result; }
-
-
 }

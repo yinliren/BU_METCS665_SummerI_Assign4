@@ -11,23 +11,15 @@ package IteratorANDInterpreter_EmployeeManage;
  */
 public class TOP extends Expression{
     @Override
-    public double top(String keywords) {
+    public double evaluate(QuestionContext keywords) {
        NameRepository namesRepository = new NameRepository();
        int index = 0;
        double top = 0;
-       for(Iterator iter = namesRepository.getIterator(); iter.hasNext();){
-           double numberofOrder = (double)iter.next();
-           if(numberofOrder > top){
-               top = index;
+       for(int i = 0; i < namesRepository.numOrders.length; i++){
+           if(namesRepository.numOrders[i] > top){
+               top = namesRepository.numOrders[i];
            }
-           index++;
-    }
+       }
        return top;
-    }
-
-    @Override
-    public double average(String keywords) {
-       throw new UnsupportedOperationException("Not exist."); //To change body of generated methods, choose Tools | Templates.
-       
     }
 }
